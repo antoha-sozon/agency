@@ -13,16 +13,19 @@ a {
 }
 
 p {
-	font-size: 1.2rem;
-	color: $black;
+	font-size: 1.2rem; 
 	line-height: 1.5;
-	margin: 5px 0; 
+	margin-bottom: 2rem; 
 	opacity: .7;
 
 	@media (min-width: $tablet-width) and (orientation: landscape) {
 		font-size: 1.6rem;  
 		line-height: 1.75; 
 	}
+}
+ 
+hr {
+	border-top: 1px solid $gray-light;
 }
 
 #wrapper { 
@@ -48,9 +51,82 @@ p {
   padding: 0 #{$grid-gutter-width / 2};
   flex-grow: 0;
   flex-shrink: 0;
-  width: 100%
-} 
+  width: 100%;
+}   
 
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.title-holder { 
+	font-weight: 700;
+	font-size: 2rem;
+	line-height: 1.3;
+	text-transform: uppercase;  
+	opacity: .8;
+	margin-bottom: 2rem;
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+		font-size: 2.8rem;
+	}
+
+	@media (min-width: $conteiner-width) {
+		font-size: 3rem;
+	}
+}
+
+.red-line { 
+	&-left {
+		position: relative;
+		vertical-align: top;
+		text-align: center;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0%;
+			right: 80%;
+			border-bottom: 2px solid $red;
+		}
+	}
+
+	&-right {
+		position: relative;
+		vertical-align: top;
+		text-align: center;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 80%; 
+			right: 0%;
+			border-bottom: 2px solid $red;
+		}
+	}
+
+	&-center { 
+		position: relative;
+		vertical-align: top;
+		text-align: center;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 40%;
+			right: 40%;
+			border-bottom: 2px solid $red;
+		}
+	}
+	
+}
 
 @each $key, $viewport in $viewports {
 	@media all and (min-width: $viewport) {
@@ -63,8 +139,7 @@ p {
 }
 
 .btn {
-    display: inline-block;
-    margin: 45px 0;
+    display: inline-block; 
     line-height: 1;
     font-size: 1.8rem;
     font-weight: bold; 
@@ -103,28 +178,11 @@ p {
 }  
 
 .section-1 {
-	padding: 50px 0 100px;
-	border-bottom: 2px solid $gray-light;
+	padding: 100px 0; 
 }
 
-.section-1-left-title {
-	h2 {
-		font-weight: 700;
-		font-size: 2rem;
-		color: $black;
-		line-height: 1.3;
-		text-transform: uppercase;  
-		margin: 45px 0;  
-		opacity: .8;
-
-		@media (min-width: $tablet-width) and (orientation: landscape) {
-			font-size: 3rem;
-		}
-
-		@media (min-width: $conteiner-width) {
-			font-size: 4.2rem;
-		}
-	}
+.section-1-left-title { 
+	padding: 45px 0;   
 } 
 .section-1-left-text {
 	p {
@@ -152,12 +210,10 @@ p {
 .section-1-right-icon {
 	margin: 0;
     color: #ff3f40;
-    font-size: 40px;
-    margin-top: 25px;
+    font-size: 40px; 
 	line-height: 1.3; 
 
 	@media (min-width: $tablet-width) and (orientation: landscape) {
-    margin-top: 45px;
 	}
  
 }
@@ -193,28 +249,36 @@ p {
  
 }
 
-.section-2-text,
-.section-3-text {
+.section-2-text {
 	position: relative;
+	vertical-align: top;
 	margin-bottom: 30px;
 
 	p {
-		text-align: center; 
-
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: -25px;
-			left: 30%;
-			right: 30%;
-			border-bottom: 2px solid $red;
-		}
+		text-align: center;  
 	}
 
 	@media (min-width: $tablet-width) and (orientation: landscape) {
 		width: 50%;
-		margin: 0 auto 90px; 
+		margin: 0 auto; 
 	} 
+}
+.section-3-text {
+	position: relative;
+	vertical-align: top;
+	margin-bottom: 30px;
+
+	p {
+		text-align: center;  
+	}
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+		width: 50%; 
+	} 
+}
+
+.section-2-header {
+	padding-bottom: 60px;
 }
 .section-2-portfolio-filter {
 	margin-bottom: 40px;
@@ -224,6 +288,8 @@ p {
 	list-style: none;
 	padding: 0;
 	text-align: center; 
+	margin-left: -20px;
+	margin-right: -20px;
 
 	li {
 			text-transform: uppercase;
@@ -249,7 +315,7 @@ p {
 
 		@media (min-width: $tablet-width) and (orientation: landscape) { 
 			display: inline-block;
-			margin-right: 45px;
+			padding: 0 20px;
 
 			&:last-child {
 				margin-right: 0; 
@@ -265,32 +331,19 @@ p {
 
 }
 
-.section-2-portfolio-products {
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}  
-.section-2-portfolio-products-block {  
-    padding: 5px; 
-    flex-grow: 0;
-    flex-shrink: 0;
-    max-width: 245px;
-    max-height:245px;
-
-    @media (min-width: $conteiner-width) { 
-	    max-width: 280px;
-	    max-height:280px;
+.section-2-portfolio {
+	.col {
+		text-align: center;
+ 		 margin: 15px 0;
 	}
-} 
+}
+
 .section-3-title h2 {
 	margin: 30px 0;
 	text-align: left;
 }
 
-.section-3-text {
-	margin: 0 0 90px 0;
-
+.section-3-text { 
 	p {
 		text-align: left;
 
@@ -299,6 +352,10 @@ p {
 			right: 60%; 
 		}
 	}  
+}
+
+.section-3-head { 
+	padding-bottom: 90px;
 }
 
 .section-3-team-head-name {
@@ -336,6 +393,10 @@ p {
  		font-style: italic;  
  		margin-right: 10px;
 
+ 		a:hover {
+			color: $red;
+ 		}
+
  		&:last-child {	 
 	 		margin-right: 0; 
  		}
@@ -346,3 +407,61 @@ p {
 		}
  	}
  }
+
+
+.subscribe {
+	h2 {
+		text-transform: none; 
+	}
+}
+
+.bg-image {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+} 
+
+.block-inverse {
+	color: #fff; 
+}
+
+.common-section {
+	padding: 130px 0;
+}
+
+.section-3-teams-user {
+	
+	a {
+		display: block;
+		position: relative;
+		vertical-align: top;
+		overflow: hidden;
+		margin-bottom: 15px; 
+
+		&:hover span {
+			transform: translateY(0); 
+		}
+	}
+	
+	img {
+		width: 100%;
+	}
+
+	span {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		text-align: center; 
+	    background: rgba($black, .5);
+	    color: #fff;
+	    text-transform: uppercase;
+	    font-size: 1.8rem;
+		transform: translateY(100%);
+		transition: all .3s;
+	}
+}
+
+.section-3-team-head-social {
+	margin-bottom: 100px;
+}
+

@@ -7,7 +7,7 @@
 		padding: 0;
 	}
 
-	@media (min-width: 1200px) {
+	@media (min-width: $conteiner-width) {
 		padding-top: 30px;
 	}
 }
@@ -169,14 +169,21 @@ nav {
 		padding: 50px 15px;
 	}
 }
-.intro-title {
+
+
+.intro-btn {
+	padding: 45px 0;
+}
+
+.intro-title { 
+	padding: 30px 0;  
+
 	h1 {
 		font-weight: 900;
 		font-size: 3rem;
 		color: $black;
 		line-height: 1.2;
 		text-transform: uppercase;
-		margin: 30px 0;  
 
 		@media (min-width: $tablet-width) and (orientation: landscape) {
 			font-size: 4rem;
@@ -187,11 +194,9 @@ nav {
 		}
 	}
 } 
+
 .intro-video-block {
-	background-color: rgba($red, 0.04);
-	background-image: url(images/intro-video-bg.png);
-	background-size: cover;
-	background-position: center;
+	background-color: rgba($red, 0.04); 
 	width: 100%;
 	margin: 30px 0;
 	min-height: 350px;
@@ -199,11 +204,20 @@ nav {
 	position: relative; 
 	vertical-align: top;
 } 
+
+.intro-video-background {
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+}
+
 .intro-video-play {  
 	img {
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		transform: translateX(-50%) translatey(-50%);	
+		transform: translateX(-50%) translatey(-50%);	 
 	}
 }

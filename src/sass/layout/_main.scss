@@ -1,7 +1,10 @@
-body {
- 	font-family: $main-font-family; 
-	line-height: 1.5;
+html {
 	font-size: $link-font-size;
+}
+body {
+ 	font-family: $base-font-family; 
+	line-height: $line-height;
+	font-size: 1.2rem;
 }
 
 a { 
@@ -9,9 +12,23 @@ a {
 	text-decoration: none;  
 }
 
-#wrapper {
+p {
+	font-size: 1.2rem;
+	color: $black;
+	line-height: 1.5;
+	margin: 5px 0; 
+	opacity: .7;
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+		font-size: 1.6rem;  
+		line-height: 1.75; 
+	}
+}
+
+#wrapper { 
 	position: relative;
-	width: 100%;
+	vertical-align: top;
+	width: 100%; 
 	overflow: hidden;
 }
 
@@ -19,4 +36,179 @@ a {
 	max-width: $conteiner-width;
 	padding: 0 15px;
 	margin: 0 auto;
-}   
+}  
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$grid-gutter-width / 2};
+}
+
+.col {
+  padding: 0 #{$grid-gutter-width / 2};
+  flex-grow: 0;
+  flex-shrink: 0;
+} 
+
+
+@each $key, $viewport in $viewports {
+	@media all and (min-width: $viewport) {
+		@for $i from 1 through $grid-count {
+			.col-#{$key}-#{$i} {
+				width: 100% / $grid-count * $i;
+			}
+		}
+	}
+}
+
+.btn {
+    display: inline-block;
+    margin: 45px 0;
+    line-height: 1;
+    font-size: 1.8rem;
+    font-weight: bold; 
+}
+
+@each $key, $btn-color in $btn-colors { 
+ 	.btn-color-#{$key} {
+		background-color: $btn-color;
+		@if $key == white {
+			color: $red;
+			border-color: $red; 
+		} @else {
+			color: white; 
+			border-color: $btn-color;  
+		} 
+	} 
+}
+
+@each $key, $border in $borders { 
+ 	.border-size-#{$key} {
+		border-width: $border; 
+    	padding: #{20 - $border*2} 60px;
+	}
+}
+
+@each $key, $border-radius in $borders-radius { 
+ 	.border-radius-#{$key} {
+		border-radius: $border-radius; 
+	}
+}
+
+@each $key, $border-style in $borders-style { 
+ 	.border-style-#{$key} {
+		border-style: $border-style; 
+	}
+}  
+
+.section-1 {
+	padding: 50px 0 100px;
+	border-bottom: 2px solid $gray-light;
+}
+
+.section-1-left-title {
+	h2 {
+		font-weight: 700;
+		font-size: 2rem;
+		color: $black;
+		line-height: 1.3;
+		text-transform: uppercase;  
+		margin: 45px 0;  
+		opacity: .8;
+
+		@media (min-width: $tablet-width) and (orientation: landscape) {
+			font-size: 3rem;
+		}
+
+		@media (min-width: $conteiner-width) and (orientation: landscape) {
+			font-size: 4.2rem;
+		}
+	}
+} 
+.section-1-left-text {
+	p {
+		opacity: 1;
+	}
+}
+.section-1-right-title {
+	h3 {
+		font-weight: 600;
+		font-size: 1.5rem;
+		color: $black;
+		line-height: 1.3; 
+		margin: 10px 0 20px;  
+		opacity: .7;
+
+		@media (min-width: $tablet-width) and (orientation: landscape) {
+			font-size: 2rem;
+		}
+
+		@media (min-width: $conteiner-width) and (orientation: landscape) {
+			font-size: 2.4rem;
+		}
+	}
+}  
+.section-1-right-icon {
+	margin: 0;
+    color: #ff3f40;
+    font-size: 40px;
+    margin-top: 25px;
+	line-height: 1.3; 
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+    margin-top: 45px;
+	}
+ 
+}
+
+.section-2 {
+	padding: 15px 0; 
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+		padding: 70px 0 45px; 
+	}
+}
+
+.section-2-title {
+	h2 {
+		font-weight: 700;
+		font-size: 2rem;
+		color: $black;
+		line-height: 1.3; 
+		margin: 30px;  
+		opacity: .7;
+		text-align: center;
+		text-transform: uppercase; 
+
+		@media (min-width: $tablet-width) and (orientation: landscape) {
+			font-size: 3rem;
+		}
+
+		@media (min-width: $conteiner-width) and (orientation: landscape) {
+			font-size: 4.2rem;
+		}
+	}
+ 
+}
+
+.section-2-text {
+	position: relative;
+
+	p {
+		text-align: center; 
+	}
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+		width: 50%;
+		margin: 0 auto; 
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -25px;
+		left: 30%;
+		right: 30%;
+		border-bottom: 2px solid $red;
+	}
+}

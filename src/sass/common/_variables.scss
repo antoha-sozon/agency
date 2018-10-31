@@ -3,33 +3,34 @@ $link-font-size: 10px;
 $line-height: 2;
 
 $menu-link-color: #e0e0e0;
-$red: #ff3f40; 
+
+
 $menu-black: #313030;
+$red: #ff2d2d; 
 $black: #000;
 $gray: #626262;
 $pink-gray: #f6f2f2;
 $gray-light: #ececec;
 $gray-lighter: #e5e5e5;
 
-$base-text-color: $gray;
+$base-text-color: $gray; 
 $link-color: $gray;
 $link-hover-color: $red;
 
 $grid-gutter-width: 30px;
 $grid-count: 12;
 
-$mobile-width: 350px;
+$mobile-width: 300px;
 $tablet-width: 768px;
-$conteiner-width: 1170px;
+$conteiner-width: 1170px; 
 $large-width: 1300px;
  
 
-$viewports: (
-	xs: $mobile-width,
+$viewports: (  
 	sm: $tablet-width,
 	md: $conteiner-width,
 	lg: $large-width
-);
+); 
  
 $btn-colors: (
 	red: $red,

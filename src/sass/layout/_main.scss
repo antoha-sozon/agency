@@ -54,6 +54,10 @@ hr {
   width: 100%;
 }   
 
+.center {
+	margin: 0 auto;  
+}
+
 .text-center {
 	text-align: center;
 }
@@ -143,6 +147,7 @@ hr {
     line-height: 1;
     font-size: 1.8rem;
     font-weight: bold; 
+    outline: none;
 }
 
 @each $key, $btn-color in $btn-colors { 
@@ -418,7 +423,7 @@ hr {
 .bg-image {
 	background-position: center center;
 	background-size: cover;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; 
 } 
 
 .block-inverse {
@@ -426,13 +431,14 @@ hr {
 }
 
 .common-section {
-	padding: 130px 0;
+	padding: 100px 0;
 }
+ 
 
 .section-3-teams-user {
 	
-	a {
-		display: block;
+	a { 
+		display: inline-block;
 		position: relative;
 		vertical-align: top;
 		overflow: hidden;
@@ -451,17 +457,146 @@ hr {
 		position: absolute;
 		width: 100%;
 		bottom: 0;
+		left: 0;
 		text-align: center; 
 	    background: rgba($black, .5);
 	    color: #fff;
 	    text-transform: uppercase;
-	    font-size: 1.8rem;
+	    font-size: 1.5rem;
 		transform: translateY(100%);
 		transition: all .3s;
+
+		@media (min-width: $tablet-width) and (orientation: landscape) { 
+	   		 font-size: 1.8rem;
+		}
 	}
 }
 
 .section-3-team-head-social {
-	margin-bottom: 100px;
+	margin-bottom: 80px;
 }
 
+.subscribe-form {
+	color: $base-text-color;
+	font-size: 1.6rem;
+	width: 60%; 
+	align-items: center;
+    justify-content: center;
+
+	.btn {
+		flex-shrink: 0;  
+		text-transform: uppercase; 
+		margin: 5px 20px;
+		padding: 28px 50px;
+	}
+} 
+  
+.form-item { 
+	flex-grow: 1; 
+	flex-shrink: 0;  
+
+	input { 
+		width: 100%;
+		padding: 28px;
+	    border-radius: 8px;
+	    border: none;
+	    outline: none;
+		
+		/*&:invalid {
+		    box-shadow: 0 0 0 0.2rem $red;
+		}
+		&:valid {
+		    box-shadow: 0 0 0 0.2rem green;
+		} */
+	}
+}
+
+.section-4-head {
+	padding-bottom: 50px; 
+}
+
+.section-4-text {
+	position: relative;
+	vertical-align: top;
+	margin-bottom: 30px; 
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+		width: 50%; 
+	} 
+} 
+
+.section-4-adress {
+	background-color: $grey-dark;
+	padding-left: 50px;
+	padding-right: 50px;
+	position: relative;
+	margin-top: 40px;
+
+	h4 {
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		margin-bottom: 40px;
+	}
+
+	@media (min-width: $tablet-width) and (orientation: landscape) {
+
+		margin-top: 0px;
+
+		&:after {
+			content: '';
+		    position: absolute;
+		    background-color: #2d2d2d;
+		    width: 100vw;
+		    height: 100%;
+		    top: 0;
+		    right: 0;
+		    transform: translateX(100%); 
+		}
+	} 
+
+	
+} 
+
+.contact-form * {
+	font-size: 1.5rem;
+	line-height: 1.8;
+
+	input[type='text'],
+	input[type='email'] {
+		padding: 10px 15px;;
+		background-color: $gray-lighter;
+		border-radius: 10px;
+		border: none; 
+		margin-bottom: 40px;
+		width: 100%;
+		outline: none;
+
+		@media (min-width: $conteiner-width) {
+			padding: 25px 45px;
+		} 
+	}
+
+	@media (min-width: $conteiner-width) {
+		font-size: 1.8rem; 
+	} 
+
+	textarea {
+		padding: 10px 15px;;
+		background-color: $gray-lighter;
+		border-radius: 10px;
+		border: none; 
+		margin-bottom: 40px;
+		width: 100%;
+		outline: none;
+
+		@media (min-width: $conteiner-width) {
+			padding: 25px 45px;
+		} 
+	}
+
+	.btn {
+		width: 100%;
+		text-transform: uppercase;
+	}
+
+} 
